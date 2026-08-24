@@ -1,20 +1,33 @@
-# Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
+# cmarti.org Website
+This folder contains the source code for **cmarti.org**, the personal portfolio website of Craig Martinez.
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
+## Purpose
+The goal of this project is to showcase professional experience, technical skills, and personal projects related to:
+- Microsoft 365 Administration
+- Entra ID and Identity Management
+- Microsoft Intune and Endpoint Management
+- Azure Cloud Technologies
+- PowerShell Automation
+- Software Development
+- Computer Science Studies
+- More
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
+## Planned Features
+- Professional landing page
+- Resume download and online viewing
+- Project portfolio and case studies
+- Technical skills overview
+- Contact information and social links
+- Future blog and lab documentation
 
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
+## Technology Stack
+Planned technologies include:
+- React
+- TypeScript
+- Vite
+- Azure Static Web Apps
+- Azure DevOps
+- Git
 
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
+## Deployment
+This site is hosted using Azure Static Web Apps and 
