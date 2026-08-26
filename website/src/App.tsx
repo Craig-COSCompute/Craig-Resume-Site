@@ -1,7 +1,3 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
 import './App.css'
 
 function App() {
@@ -12,8 +8,9 @@ function App() {
       <p>Azure Enthusiast</p>
       <p>Computer Science Student</p>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
+
 
