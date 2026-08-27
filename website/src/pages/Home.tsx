@@ -47,7 +47,7 @@ export default function Home() {
             <button>View Projects</button>
           </Link>
 
-          <a href="/Craig-Martinez-Resume.pdf" download>
+          <a href="/Craig_Martinez_Resume.pdf" download>
             <button>Download Resume</button>
           </a>
 
