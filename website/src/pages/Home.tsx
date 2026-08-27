@@ -1,8 +1,15 @@
+import headshot from "../assets/headshot.png";
+import { Link } from "react-router-dom";
+
 export default function Home() {
   return (
     <main>
       <section className="hero-content">
-        <h1>Building Technology That Helps People</h1>
+        <div className="hero-image">
+          <img src={headshot}></img>
+        </div>
+
+        <h1>Clouds, Code, and Curious Ideas - Craig</h1>
 
         <h2>
           IT Professional • Software Developer • Azure Enthusiast • Founder of COSCompute
@@ -36,14 +43,22 @@ export default function Home() {
         </p>
 
         <div className="hero-buttons">
-          <button>View Projects</button>
-          <button>Download Resume</button>
-          <button>Contact Me</button>
-        </div>
+          <Link to="/projects">
+            <button>View Projects</button>
+          </Link>
+
+          <a href="/Craig-Martinez-Resume.pdf" download>
+            <button>Download Resume</button>
+          </a>
+
+          <Link to="/contact">
+            <button>Contact Me</button>
+          </Link>
+      </div>
       </section>
 
       <section className="focus-section">
-        <h2>What I'm Focused On</h2>
+        <h2 className="focus-title">What I'm Focused On</h2>
 
         <div className="focus-card">
           <h3>🎓 Community Impact</h3>
