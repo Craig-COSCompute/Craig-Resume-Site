@@ -4,10 +4,21 @@
   box-sizing: border-box;
 }
 
-body {
-  min-width: 320px;
-  font-family: Segoe UI, sans-serif;
+:root {
+  color: #f8fafc;
+  background-color: #020617;
+  font-family: Inter, system-ui, sans-serif;
   line-height: 1.5;
+  font-weight: 400;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #020617;
+  color: #f8fafc;
 }
 
 #root {
