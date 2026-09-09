@@ -27,7 +27,7 @@ export default function Resume() {
           src="/Craig_Martinez_Resume.pdf"
           title="Resume PDF"
           width="100%"
-          height="800px"
+          height="1150px"
           style={{ border: 'none' }}
         >
           <p>
