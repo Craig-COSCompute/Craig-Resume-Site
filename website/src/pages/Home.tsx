@@ -37,9 +37,9 @@ export default function Home() {
         </p>
 
         <p>
-          I absolutely love working with tech and all the wonderfulness it brings to everybody. I am a true believer in making life efficient for everybody involved. 
-          My biggest goal in life is to do whatever I can to make life easier for a huge majority of people, especially the people who need it. Needless to say, I 1000% support Open Source Software and
-          anything I develop, I plan to release as that. 
+          I absolutely love working with tech and all the wonderfulness it brings to people. I’m a big believer in using technology to make life easier and more efficient for everyone involved.
+          I also firmly believe that you can learn just about anything if you’re willing to invest the time and have the patience to stick with it. Most things aren’t magic, they’re just skills waiting to be learned.
+          My biggest goal in life is to do whatever I can to make life easier for as many people as possible, especially those who need it most. Needless to say, I 1000% support Open Source Software, and anything I develop, I plan to release as open source whenever possible. 
         </p>
 
         <div className="hero-buttons">
