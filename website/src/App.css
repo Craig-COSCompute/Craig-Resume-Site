@@ -40,6 +40,19 @@ main {
   border-radius: 8px;
 }
 
+.resume-header {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+}
+
+.resume-header button {
+  padding: 12px 24px;
+  border-radius: 8px;
+}
+
 .focus-section {
   text-align: center;
 }
@@ -61,7 +74,8 @@ main {
   object-fit: cover;
   object-position: center 5%;
   border-radius: 50%;
-  border: 4px solid #ddd;
+  border: 3px solid var(--accent-border);
+  box-shadow: 0 0 32px rgba(167, 139, 250, 0.18);
 }
 
 .hero-content {
@@ -82,4 +96,144 @@ main {
 
 .focus-title {
   margin-bottom: 2rem;
+}
+/* ---------- Sidebar layout ---------- */
+.app-shell {
+  --sidebar-width: 240px;
+  --sidebar-width-collapsed: 72px;
+  display: flex;
+  min-height: 100vh;
+}
+
+.app-content {
+  flex: 1;
+  min-width: 0;
+  margin-left: var(--sidebar-width);
+  transition: margin-left 0.25s ease;
+}
+
+.app-shell.sidebar-collapsed .app-content {
+  margin-left: var(--sidebar-width-collapsed);
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: var(--sidebar-width);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem 0.75rem;
+  background: var(--bg-elevated);
+  border-right: 1px solid var(--border);
+  transition: width 0.25s ease;
+  z-index: 10;
+  overflow: hidden;
+}
+
+.sidebar.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
+
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding-left: 0.5rem;
+}
+
+.sidebar.collapsed .sidebar-header {
+  justify-content: center;
+  padding-left: 0;
+}
+
+.sidebar-brand {
+  font-weight: 600;
+  font-size: 1.05rem;
+  white-space: nowrap;
+}
+
+.sidebar-toggle {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  background: transparent;
+  color: var(--text-muted);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+
+.sidebar-toggle:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  height: 44px;
+  padding: 0 0.75rem;
+  border-radius: 10px;
+  color: var(--text-muted);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s, color 0.15s;
+}
+
+.sidebar-link:hover {
+  background: var(--surface-hover);
+  color: var(--text);
+}
+
+.sidebar-link.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+.sidebar-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 22px;
+}
+
+.sidebar.collapsed .sidebar-label {
+  display: none;
+}
+
+.sidebar.collapsed .sidebar-link {
+  justify-content: center;
+  padding: 0;
+}
+
+@media (max-width: 768px) {
+  .app-shell {
+    --sidebar-width: 200px;
+  }
+
+  /* On phones, default to the slim rail and let expanded overlay content */
+  .app-content,
+  .app-shell.sidebar-collapsed .app-content {
+    margin-left: var(--sidebar-width-collapsed);
+  }
+
+  main {
+    padding: 2rem 1rem;
+  }
 }

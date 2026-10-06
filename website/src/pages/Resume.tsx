@@ -13,12 +13,8 @@ export default function Resume() {
         }}
       >
         <h1>Resume</h1>
-        <a 
-          href="/Craig_Martinez_Resume.pdf" 
-          download="Craig_Martinez_Resume.pdf" 
-          className="download-btn"
-        >
-          Download Resume
+        <a href="/Craig_Martinez_Resume.pdf" download="Craig_Martinez_Resume.pdf">
+          <button>Download Resume</button>
         </a>
       </div>
 

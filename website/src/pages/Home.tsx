@@ -37,9 +37,8 @@ export default function Home() {
         </p>
 
         <p>
-          I absolutely love working with tech and all the wonderfulness it brings to everybody. I am a true believer in making life efficient for everybody involved. 
-          My biggest goal in life is to do whatever I can to make life easier for a huge majority of people, especially the people who need it. Needless to say, I 1000% support Open Source Software and
-          anything I develop, I plan to release as that. 
+          I absolutely love working with tech and all the wonderfulness it brings to everybody. It has helped me grow into a true growth mindset and nothing is unachievable so long as 
+          you put the effort into it. Never back down from any task or learning something new as you will just have to put the effort into it, and you will be good.
         </p>
 
         <div className="hero-buttons">
@@ -48,7 +47,7 @@ export default function Home() {
           </Link>
 
           <a href="/Craig_Martinez_Resume.pdf" download>
-            <button>Download Resume</button>
+            <button className="btn-cta">Download Resume</button>
           </a>
 
           <Link to="/contact">
