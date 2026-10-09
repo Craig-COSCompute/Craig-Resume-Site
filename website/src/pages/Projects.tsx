@@ -20,6 +20,14 @@ export default function Projects() {
             </div>
             <p className="project-summary">{project.summary}</p>
 
+            {project.cost && (
+              <div className="project-cost">
+                <span className="project-cost-label">Azure hosting cost</span>
+                <span className="project-cost-value">{project.cost.value}</span>
+                <span className="project-cost-note">{project.cost.note}</span>
+              </div>
+            )}
+
             <ul className="project-highlights">
               {project.highlights.map((line) => (
                 <li key={line}>{line}</li>
@@ -35,17 +43,20 @@ export default function Projects() {
             </ul>
 
             <div className="project-links">
-              {project.links.map((link) => (
-                <a
-                  className="btn"
-                  href={link.href}
-                  target="_blank"
-                  rel="noreferrer"
-                  key={link.href}
-                >
-                  {link.label}
-                </a>
-              ))}
+              {project.links.map((link) => {
+                const external = link.href.startsWith("http");
+                return (
+                  <a
+                    className={link.cta ? "btn btn-cta" : "btn"}
+                    href={link.href}
+                    target={external ? "_blank" : undefined}
+                    rel={external ? "noreferrer" : undefined}
+                    key={link.href}
+                  >
+                    {link.label}
+                  </a>
+                );
+              })}
             </div>
           </article>
         ))}

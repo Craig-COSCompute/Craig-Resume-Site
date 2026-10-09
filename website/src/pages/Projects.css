@@ -37,6 +37,35 @@
   color: var(--text-body);
 }
 
+.project-cost {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.25rem 0.75rem;
+  padding: 0.8rem 1rem;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+}
+
+.project-cost-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.project-cost-value {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.project-cost-note {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
 .project-highlights {
   display: grid;
   gap: 0.4rem;
@@ -64,8 +93,11 @@
     padding: 1.25rem;
   }
 
+  .project-links {
+    flex-direction: column;
+  }
+
   .project-links .btn {
-    flex: 1;
     text-align: center;
   }
 }

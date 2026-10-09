@@ -64,7 +64,7 @@ export default function Contact() {
             ))}
           </ul>
           <div className="contact-actions">
-            <a className="btn" href="mailto:craig@cmarti.org">
+            <a className="btn btn-cta" href="mailto:craig@cmarti.org">
               craig@cmarti.org
             </a>
             <a

@@ -15,7 +15,17 @@ const e = (name: string): Skill => ({ name, level: "expert" });
 const p = (name: string): Skill => ({ name, level: "proficient" });
 const f = (name: string): Skill => ({ name, level: "familiar" });
 
-export const technical: SkillGroup[] = [
+const LEVEL_ORDER: Level[] = ["expert", "proficient", "familiar"];
+
+// Within each group, list expert skills first, then proficient, then familiar
+const byLevel = (group: SkillGroup): SkillGroup => ({
+  ...group,
+  skills: [...group.skills].sort(
+    (a, b) => LEVEL_ORDER.indexOf(a.level) - LEVEL_ORDER.indexOf(b.level),
+  ),
+});
+
+const groups: SkillGroup[] = [
   {
     title: "Azure Platform",
     blurb:
@@ -23,11 +33,12 @@ export const technical: SkillGroup[] = [
     skills: [
       e("App Service"), e("Functions"), e("Container Apps"), e("Static Web Apps"),
       e("App Service Environment"), e("App Service Certificates & Domains"),
+      e("Azure Networking"), p("Azure VMs"), p("Azure Databricks"),
       p("App Configuration"), p("Application Insights"), p("KQL"), p("Key Vault"),
       p("Azure Monitor"), p("Managed Identity"), p("RBAC"), p("Azure Policy"),
       p("VNet Integration"), p("Private Endpoints"), p("DNS & Custom Domains / TLS"),
-      f("App Gateway / Front Door"), p("Docker"), p("Azure Container Registry"),
-      f("Storage Accounts"), f("Cosmos DB"), f("Azure SQL"), f("Microsoft Sentinel"),
+      p("App Gateway / Front Door"), p("Azure Container Registry"), p("Azure SQL"),
+      f("Storage Accounts"), f("Cosmos DB"), f("Microsoft Sentinel"),
     ],
   },
   {
@@ -35,9 +46,9 @@ export const technical: SkillGroup[] = [
     blurb:
       "Six months building customer environments, including migration planning and operational documentation.",
     skills: [
-      p("Terraform"), p("Bicep"), p("ARM Templates"), e("Azure CLI"),
-      p("Azure DevOps"), f("GitHub Actions"), f("CI/CD Pipelines"),
-      p("Environment Design"), p("Cloud Migration Planning"),
+      e("Azure CLI"), p("Terraform"), p("Bicep"), p("ARM Templates"),
+      p("Azure DevOps"), p("Cloud Migration Planning"),
+      f("GitHub Actions"), f("CI/CD Pipelines"),
     ],
   },
   {
@@ -54,7 +65,7 @@ export const technical: SkillGroup[] = [
     title: "Linux",
     blurb: "Daily driver and home lab. Arch is the favorite, Fedora the most used.",
     skills: [
-      p("Arch"), p("Fedora"), f("Ubuntu"), f("Linux Mint"), f("Kali"),
+      p("Fedora"), p("Arch"), f("Ubuntu"), f("Linux Mint"), f("Kali"),
       p("Command Line"), p("Bash Scripting"), p("User & Permission Management"),
       p("systemd"), p("SSH"),
     ],
@@ -84,12 +95,14 @@ export const technical: SkillGroup[] = [
   {
     title: "Development & Tools",
     skills: [
-      p("PowerShell"), p("Python"), f("C#"), f("Java"), p("JavaScript"),
-      f("TypeScript / React"), p("Git / GitHub"), p("VS Code"), p("Postman"),
-      p("Fiddler"), p("Jira"), p("Microsoft Copilot"),
+      p("PowerShell"), p("Python"), p("JavaScript"), f("C#"), f("C++"), f("Java"),
+      f("TypeScript / React"), p("Docker"), p("PostgreSQL"), p("MySQL"),
+      p("Git / GitHub"), p("VS Code"), p("Postman"), p("Fiddler"), p("Jira"),
     ],
   },
 ];
+
+export const technical: SkillGroup[] = groups.map(byLevel);
 
 export const professional: CardItem[] = [
   {
