@@ -9,8 +9,8 @@ Source for [cmarti.org](https://cmarti.org), the personal portfolio of Craig Mar
 | Home     | Intro, current work, and what I'm focused on                              |
 | Skills   | Certifications, technical skills by proficiency, and professional skills  |
 | Resume   | Experience timeline, education, and the full PDF                          |
-| Projects | Coming soon                                                               |
-| Contact  | Email and LinkedIn                                                        |
+| Projects | Things I have built, starting with this site                              |
+| Contact  | COSCompute business inquiries, plus personal email and LinkedIn            |
 
 ## Tech stack
 
@@ -27,13 +27,13 @@ website/
 ├── public/                 Static files (resume PDF, favicon, Azure SWA config)
 └── src/
     ├── components/         Navbar and shared page building blocks
-    ├── data/               Resume and skills content
+    ├── data/               Resume, skills, and projects content
     ├── pages/              One component and stylesheet per route
     ├── styles/             Layout and shared component styles
     └── index.css           Design tokens and base styles
 ```
 
-Site content lives in `src/data/`, so updating the resume or skills doesn't require touching any components.
+Site content lives in `src/data/`, so updating the resume, skills, or projects doesn't require touching any components.
 
 ## Running locally
 

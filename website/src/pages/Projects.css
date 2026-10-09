@@ -1,0 +1,71 @@
+.project-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.75rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--accent-border);
+  border-radius: 14px;
+  box-shadow: 0 0 32px rgba(167, 139, 250, 0.1);
+}
+
+.project-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.project-status {
+  padding: 0.15rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #4ade80;
+  background: rgba(74, 222, 128, 0.12);
+  border: 1px solid rgba(74, 222, 128, 0.4);
+}
+
+.project-summary {
+  color: var(--text-body);
+}
+
+.project-highlights {
+  display: grid;
+  gap: 0.4rem;
+  list-style: none;
+  font-size: 0.93rem;
+}
+
+.project-highlights li::before {
+  content: "✓";
+  margin-right: 0.6rem;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.project-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
+  padding-top: 0.25rem;
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    padding: 1.25rem;
+  }
+
+  .project-links .btn {
+    flex: 1;
+    text-align: center;
+  }
+}
