@@ -1,33 +1,52 @@
-# cmarti.org Website
-This folder contains the source code for **cmarti.org**, the personal portfolio website of Craig Martinez.
+# cmarti.org
 
-## Purpose
-The goal of this project is to showcase professional experience, technical skills, and personal projects related to:
-- Microsoft 365 Administration
-- Entra ID and Identity Management
-- Microsoft Intune and Endpoint Management
-- Azure Cloud Technologies
-- PowerShell Automation
-- Software Development
-- Computer Science Studies
-- More
+Source for [cmarti.org](https://cmarti.org), the personal portfolio of Craig Martinez: Azure specialist, IT professional, and founder of COSCompute in Colorado Springs, CO.
 
-## Planned Features
-- Professional landing page
-- Resume download and online viewing
-- Project portfolio and case studies
-- Technical skills overview
-- Contact information and social links
-- Future blog and lab documentation
+## Pages
 
-## Technology Stack
-Planned technologies include:
-- React
-- TypeScript
-- Vite
-- Azure Static Web Apps
-- Azure DevOps
-- Git
+| Page     | What's there                                                              |
+| -------- | ------------------------------------------------------------------------- |
+| Home     | Intro, current work, and what I'm focused on                              |
+| Skills   | Certifications, technical skills by proficiency, and professional skills  |
+| Resume   | Experience timeline, education, and the full PDF                          |
+| Projects | Coming soon                                                               |
+| Contact  | Email and LinkedIn                                                        |
+
+## Tech stack
+
+- [React 19](https://react.dev) + [TypeScript](https://www.typescriptlang.org)
+- [Vite](https://vite.dev) for dev server and builds
+- [React Router](https://reactrouter.com) for client-side routing
+- Plain CSS with design tokens (no UI framework)
+- Hosted on [Azure Static Web Apps](https://learn.microsoft.com/azure/static-web-apps/), deployed with GitHub Actions
+
+## Project structure
+
+```
+website/
+├── public/                 Static files (resume PDF, favicon, Azure SWA config)
+└── src/
+    ├── components/         Navbar and shared page building blocks
+    ├── data/               Resume and skills content
+    ├── pages/              One component and stylesheet per route
+    ├── styles/             Layout and shared component styles
+    └── index.css           Design tokens and base styles
+```
+
+Site content lives in `src/data/`, so updating the resume or skills doesn't require touching any components.
+
+## Running locally
+
+Requires Node.js 20.19+ or 22.12+.
+
+```bash
+cd website
+npm install
+npm run dev      # start the dev server
+npm run build    # type-check and build to dist/
+npm run lint     # run ESLint
+```
 
 ## Deployment
-This site is hosted using Azure Static Web Apps and 
+
+Every push to `main` builds `website/` and deploys it to Azure Static Web Apps through [the workflow](.github/workflows/azure-static-web-apps-green-stone-0a84f151e.yml). Pull requests get their own preview environment.

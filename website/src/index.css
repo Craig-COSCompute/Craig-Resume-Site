@@ -33,8 +33,11 @@
   color-scheme: dark;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  margin: 0;
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--bg);
@@ -55,7 +58,8 @@ a:hover {
   color: var(--text);
 }
 
-button {
+button,
+.btn {
   font: inherit;
   cursor: pointer;
   color: var(--text);
@@ -64,7 +68,17 @@ button {
   transition: background 0.15s, border-color 0.15s, box-shadow 0.15s;
 }
 
-button:hover {
+/* Links styled as buttons */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+button:hover,
+.btn:hover {
+  color: var(--text);
   background: rgba(167, 139, 250, 0.24);
   border-color: var(--accent);
 }
@@ -75,14 +89,15 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
-button.btn-cta {
+.btn-cta {
   background: var(--cta);
   border-color: var(--cta);
   color: var(--cta-text);
   font-weight: 600;
 }
 
-button.btn-cta:hover {
+.btn-cta:hover {
+  color: var(--cta-text);
   background: var(--cta-hover);
   border-color: var(--cta-hover);
   box-shadow: 0 0 24px rgba(251, 191, 36, 0.25);

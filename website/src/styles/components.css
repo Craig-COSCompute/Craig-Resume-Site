@@ -1,0 +1,193 @@
+/* Shared building blocks used across pages: page shell, hero, stats, sections, cards, chips */
+
+/* ---------- Page shell ---------- */
+.page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 4rem;
+}
+
+/* ---------- Page hero ---------- */
+.page-hero {
+  text-align: center;
+  margin-bottom: 3.5rem;
+  padding: 2.5rem 1.5rem 2rem;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background:
+    radial-gradient(ellipse at top, rgba(167, 139, 250, 0.18), transparent 65%),
+    var(--bg-elevated);
+}
+
+.page-eyebrow {
+  margin-bottom: 0.5rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.page-hero h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  background: linear-gradient(90deg, var(--text), var(--accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.page-subtitle {
+  max-width: 560px;
+  margin: 0.8rem auto 1.8rem;
+  color: var(--text-body);
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/* ---------- Stats ---------- */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.8rem;
+  list-style: none;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  padding: 0.9rem 0.5rem;
+  border-radius: 10px;
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+}
+
+.stat-value {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.stat-label {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Sections ---------- */
+.page-section {
+  margin-bottom: 3rem;
+  scroll-margin-top: 1.5rem;
+}
+
+.page-section > h2 {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.page-section > h2::before {
+  content: "";
+  display: inline-block;
+  width: 4px;
+  height: 1em;
+  margin-right: 0.6rem;
+  vertical-align: -0.12em;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+/* ---------- Cards ---------- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  padding: 1.1rem 1.25rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.card h4 {
+  margin-bottom: 0.4rem;
+  color: var(--text);
+}
+
+.card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+/* ---------- Chips ---------- */
+.chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.chip {
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  color: var(--text-body);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-border);
+}
+
+.chip-expert {
+  color: var(--text);
+  background: var(--accent-strong);
+  border-color: var(--accent-strong);
+}
+
+.chip-familiar {
+  background: transparent;
+  border-style: dashed;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 1rem 1rem 2rem;
+  }
+
+  .page-hero {
+    padding: 1.75rem 1rem 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  /* Three stats fit on one row; avoid a lone tile on a second row */
+  .stat-grid:has(> :nth-child(3):last-child) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .stat-value {
+    font-size: 1.4rem;
+  }
+
+  .page-section {
+    scroll-margin-top: 0.5rem;
+    margin-bottom: 2.25rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .chip {
+    padding: 0.25rem 0.65rem;
+    font-size: 0.82rem;
+  }
+}

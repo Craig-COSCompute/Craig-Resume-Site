@@ -1,12 +1,14 @@
-import headshot from "../assets/headshot.png";
+import "./Home.css";
 import { Link } from "react-router-dom";
+import headshot from "../assets/headshot.jpg";
+import { RESUME_PDF } from "../data/resume";
 
 export default function Home() {
   return (
-    <main>
+    <main className="page home">
       <section className="hero-content">
         <div className="hero-image">
-          <img src={headshot}></img>
+          <img src={headshot} alt="Craig Martinez" width={250} height={250} />
         </div>
 
         <h1>Clouds, Code, and Curious Ideas - Craig</h1>
@@ -15,45 +17,49 @@ export default function Home() {
           IT Professional • Software Developer • Azure Enthusiast • Founder of COSCompute
         </h2>
 
-        <p>
-          Hi, I'm Craig Martinez.
-        </p>
+        <p>Hi, I'm Craig Martinez.</p>
 
         <h3>☀️ By Day</h3>
 
         <p>
-          I happily support students, faculty, and staff at Pikes Peak State College @ the Service Desk. We support a wide range of issues and technologies at the college while being in a hybrid enviornment. If you got to school
-          here, please feel free to drop by and say hello :) 
+          I happily support students, faculty, and staff at Pikes Peak State College @ the
+          Service Desk. We support a wide range of issues and technologies at the college
+          while being in a hybrid environment. If you go to school here, please feel free to
+          drop by and say hello :)
         </p>
 
         <h3>🌙 By Night</h3>
 
         <p>
-          You'll usually find me working on projects such as -- figuring out what to do with my 3 Lenovo Tinys 
-          (home firewall and host this site from home? k8s clusters just because. currently just using them to play with any new flavor of linux I hear about),
-          side-projects in Azure, developing sites for fun, thinking about what to do next. 
-          Working on starting up cloud consulting on the side through COSCompute (super happy with the name - Colorado Springs is my HOME) -- strong Azure skills, 
-          plan to dive into AWS and GCP to be a true cloud architect (and not give one massive corp all my love -- better for the customer IMO)!
+          You'll usually find me working on projects such as -- figuring out what to do with
+          my 3 Lenovo Tinys (home firewall and host this site from home? k8s clusters just
+          because. Currently just using them to play with any new flavor of Linux I hear
+          about), side-projects in Azure, developing sites for fun, thinking about what to do
+          next. Working on starting up cloud consulting on the side through COSCompute (super
+          happy with the name - Colorado Springs is my HOME) -- strong Azure skills, plan to
+          dive into AWS and GCP to be a true cloud architect (and not give one massive corp
+          all my love -- better for the customer IMO)!
         </p>
 
         <p>
-          I absolutely love working with tech and all the wonderfulness it brings to everybody. It has helped me grow into a true growth mindset and nothing is unachievable so long as 
-          you put the effort into it. Never back down from any task or learning something new as you will just have to put the effort into it, and you will be good.
+          I absolutely love working with tech and all the wonderfulness it brings to
+          everybody. It has helped me grow into a true growth mindset and nothing is
+          unachievable so long as you put the effort into it. Never back down from any task
+          or learning something new as you will just have to put the effort into it, and you
+          will be good.
         </p>
 
         <div className="hero-buttons">
-          <Link to="/projects">
-            <button>View Projects</button>
+          <Link className="btn" to="/projects">
+            View Projects
           </Link>
-
-          <a href="/Craig_Martinez_Resume.pdf" download>
-            <button className="btn-cta">Download Resume</button>
+          <a className="btn btn-cta" href={RESUME_PDF} download>
+            Download Resume
           </a>
-
-          <Link to="/contact">
-            <button>Contact Me</button>
+          <Link className="btn" to="/contact">
+            Contact Me
           </Link>
-      </div>
+        </div>
       </section>
 
       <section className="focus-section">
@@ -84,7 +90,7 @@ export default function Home() {
             Subject Matter Expert for Azure App Service and Azure Functions, I worked
             with a variety of technology stacks and programming languages. That
             experience taught me to quickly learn new technologies and confidently
-            tackle challenges regardless of the language or framework
+            tackle challenges regardless of the language or framework.
           </p>
         </div>
 
@@ -101,4 +107,3 @@ export default function Home() {
     </main>
   );
 }
-``

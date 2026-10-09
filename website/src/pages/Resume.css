@@ -1,0 +1,87 @@
+.timeline {
+  position: relative;
+  padding-left: 1.5rem;
+  border-left: 2px solid var(--accent-border);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+  padding: 1.1rem 1.25rem;
+  background: var(--bg-elevated);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: calc(-1.5rem - 7px);
+  top: 1.5rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+
+.timeline-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.25rem 1rem;
+}
+
+.timeline-head h3 {
+  font-size: 1.1rem;
+}
+
+.timeline-dates {
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.timeline-org {
+  margin-bottom: 0.6rem;
+  color: var(--text-muted);
+}
+
+.timeline-item ul {
+  padding-left: 1.1rem;
+  color: var(--text-body);
+  font-size: 0.93rem;
+}
+
+.timeline-item li {
+  margin-bottom: 0.35rem;
+}
+
+.pdf-frame {
+  width: 100%;
+  height: 1150px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.pdf-fallback {
+  margin-top: 0.75rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 1rem;
+  }
+
+  .timeline-item::before {
+    left: calc(-1rem - 7px);
+  }
+
+  /* Mobile browsers render embedded PDFs poorly; the download button covers it */
+  .pdf-frame {
+    display: none;
+  }
+}
